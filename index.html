@@ -1,12 +1,99 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>die-cut-collage</title>
+    <meta
+      name="description"
+      content="사진 중심부를 동심원 고리로 잘라 한 고리씩 어긋나게 비트는 종이 콜라주 효과를 재현하는 무료 도구. 실시간 미리보기와 네 가지 조절만으로 완성하고, 모든 처리는 브라우저 안에서 이루어집니다."
+    />
+    <link rel="canonical" href="https://die-cut-collage.it-might.work/" />
+    <title>Die-Cut Collage — 사진을 동심원으로 잘라 비트는 종이 콜라주 효과</title>
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- 정적 소개 섹션: 검색엔진과 심사 크롤러는 JS를 실행하지 않으므로,
+         이 내용은 반드시 index.html에 정적으로 존재해야 한다. -->
+    <section class="app-info">
+      <h1>Die-Cut Collage란?</h1>
+      <p>
+        Die-Cut Collage는 인상적인 종이 공예 효과 하나를 디지털로 재현합니다 — 사진을
+        동심원 여러 개로 오려낸 뒤 각 원판을 조금씩 어긋나게 돌려 다시 붙인, 마치 인화지를
+        재단기(die cutter)로 자르고 일부러 삐뚤게 재조립한 듯한 그 효과입니다. 영감의
+        출처인 인스타그램 작가 @10.years.time의 작품은 앱 화면 안에 직접 표기되어
+        있습니다.
+      </p>
+      <p>
+        이미지 한 장을 불러오면 효과가 즉시 실시간 미리보기로 렌더링되고, 조절할 때마다
+        바로 갱신됩니다. 결과를 결정하는 조절 값은 네 가지입니다: 회전 방향(시계/반시계),
+        가장 바깥 고리의 크기(30–100%), 고리 개수(2–20개), 그리고 고리들에 고르게 배분되는
+        전체 회전 각도(0–90°). 모든 고리 경계에 얇은 흰 테두리가 그려져 오려낸 종이의
+        느낌을 완성합니다.
+      </p>
+      <p>
+        이 사이트의 다른 도구들과 마찬가지로 모든 처리는 로컬에서 이루어집니다. 오프스크린
+        캔버스에서 렌더링하고 긴 변 1440픽셀로 정규화된 고품질 WebP로 내보내며, 업로드도
+        계정도 없습니다. 레이아웃은 모바일 우선입니다 — 탭해서 사진을 고르고, 슬라이더를
+        조절하고, 길게 눌러 저장하면 됩니다.
+      </p>
+
+      <h2>주요 기능</h2>
+      <ul>
+        <li><strong>실시간 미리보기</strong> — 설정을 바꿀 때마다 효과가 즉시 다시 렌더링됩니다.</li>
+        <li><strong>네 가지 집중된 조절</strong> — 방향, 바깥 고리 크기(30–100%), 고리 수(2–20), 전체 비틀림 각(0–90°).</li>
+        <li><strong>진짜 오려낸 질감</strong> — even-odd 고리 클리핑과 모든 경계의 가는 흰 테두리로 실제 재단 종이 같은 마감.</li>
+        <li><strong>즉시 로컬 내보내기</strong> — 오프스크린 캔버스 처리와 WebP 내보내기. 업로드 없음, 계정 없음.</li>
+      </ul>
+
+      <h2>사용 방법</h2>
+      <ol>
+        <li>사진 한 장을 탭하거나 끌어다 넣습니다.</li>
+        <li>회전 방향과 고리 영역의 크기를 정합니다.</li>
+        <li>비틀림이 마음에 들 때까지 고리 개수와 전체 회전 각도를 조절합니다.</li>
+        <li>결과를 저장합니다 — 모바일에서는 이미지를 길게 누릅니다.</li>
+      </ol>
+
+      <h2>자주 묻는 질문</h2>
+      <h3>원본 사진이 바뀌나요?</h3>
+      <p>
+        아니요. 효과는 새 이미지로 렌더링되며, 원본 파일은 그대로 남고 업로드되지도
+        않습니다.
+      </p>
+      <h3>어떤 사진이 잘 어울리나요?</h3>
+      <p>
+        중심 피사체가 뚜렷한 사진 — 얼굴, 꽃, 사물 — 일수록 고리의 어긋남이 가장 극적으로
+        보입니다.
+      </p>
+
+      <footer>
+        <p>
+          Die-Cut Collage는 <a href="https://it-might.work/">it-might.work</a>의 무료
+          도구 모음 중 하나입니다. 영어 소개는
+          <a href="https://it-might.work/apps/die-cut-collage">it-might.work/apps/die-cut-collage</a>에서,
+          데이터 처리 방침은
+          <a href="https://it-might.work/privacy">개인정보 처리방침</a>에서 확인할 수
+          있습니다.
+        </p>
+      </footer>
+    </section>
+
+    <style>
+      .app-info {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
+        line-height: 1.75;
+        font-size: 0.95rem;
+        color: #c9cdd6;
+      }
+      .app-info h1 { font-size: 1.5rem; color: #f3f4f6; }
+      .app-info h2 { font-size: 1.2rem; margin-top: 2rem; color: #f3f4f6; }
+      .app-info h3 { font-size: 1rem; margin-bottom: 0.25rem; color: #f3f4f6; }
+      .app-info a { color: #9db8e8; }
+      .app-info footer { margin-top: 2.5rem; opacity: 0.75; font-size: 0.85rem; }
+    </style>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

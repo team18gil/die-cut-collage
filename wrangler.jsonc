@@ -8,7 +8,8 @@
 	"main": "worker/index.ts",
 	"compatibility_date": "2026-05-25",
 	"assets": {
-		"not_found_handling": "single-page-application",
+		// SPA fallback 제거: 미지정 경로는 worker/index.ts로 넘어가 실제 404를 반환한다.
+		// (soft 404는 AdSense가 "콘텐츠 없는 화면"으로 판정한다 — it-might-work-main/CLAUDE.md 참고)
 		"directory": "./dist/client"
 	},
 	"observability": {

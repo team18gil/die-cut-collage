@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://die-cut-collage.it-might.work/sitemap.xml
